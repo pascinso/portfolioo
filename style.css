@@ -1,0 +1,182 @@
+/* ! import css style from another folder */
+@import url("/source/default.css");
+
+body > section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #e5e1d7;
+  padding: 60px 0;
+  min-height: 92vh;
+}
+body > section * {
+  display: flex;
+}
+
+.projects {
+  flex-direction: column;
+  justify-content: center;
+  width: 494px;
+}
+.projects > span {
+  height: 1px;
+  width: 38px;
+  background: black;
+}
+.projects > p {
+  all: unset;
+  font-family: Source Sans Pro, Arial, sans-serif;
+  font-size: 22px;
+  margin: 13px 0 40px;
+}
+/* ! adapting to reponsive layout */
+@media (max-width: 684px) {
+  .projects {
+    width: 374px;
+  }
+}
+@media (max-width: 478px) {
+  .projects {
+    width: 264px;
+  }
+}
+@media (max-width: 378px) {
+  .projects {
+    width: 164px;
+  }
+  .projects > p {
+    font-size: 18px;
+  }
+}
+
+.project {
+  font-family: Roboto Slab, Arial, sans-serif;
+  font-size: 78px;
+  color: black;
+  margin: 4px 0;
+  line-height: 1.2;
+  align-items: center;
+}
+@media (max-width: 684px) {
+  .project {
+    font-size: 58px;
+  }
+}
+@media (max-width: 478px) {
+  .project {
+    line-height: unset;
+    font-size: 38px;
+  }
+}
+@media (max-width: 378px) {
+  .project {
+    font-size: 22px;
+    margin: 5px 0;
+  }
+}
+
+.project.is-hovered,
+.project:hover,
+.project > .hovered > .link:hover {
+  color: #ffb072;
+}
+.project > .hovered {
+  flex: 1;
+  align-self: flex-start;
+  padding-left: 0.5em;
+  height: 100%;
+}
+.project > .hovered:hover {
+  cursor: auto;
+}
+.project > .hovered > .slash {
+  background: black;
+  transform: rotate(30deg);
+  width: 2px;
+  font-family: Poppins, Arial, sans-serif;
+}
+
+/* ! Using uploaded font */
+
+/* * 1st: check if the user has font installed on machine with possible naming -> local("Proxima Nova Regular") or local("ProximaNova-Regular") */
+/* * 2nd: if not installed use uploaded font from "public" folder */
+
+@font-face {
+  font-family: Proxima Nova;
+  src: local("Proxima Nova Regular"), local("ProximaNova-Regular"),
+    url("/public/fonts/ProximaNova-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.project > .hovered > .link {
+  font-family: Proxima Nova, Arial, sans-serif;
+  font-size: 0.2em;
+  align-self: flex-end;
+  color: black;
+  margin-left: 0.8em;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  background: #222222;
+  padding: 4rem 20%;
+  width: 100%;
+  color: #e5e1d7;
+  align-items: center;
+}
+
+/* ! sets all elements in the subscribe element, excluding the subscribe element itself */
+.subscribe * {
+  display: flex;
+}
+
+.subscribe > h1 {
+  font-family: Source Sans Pro;
+  align-self: flex-start;
+}
+.subscribe > label {
+  font-family: Poppins;
+  width: 100%;
+  margin: 1.5rem;
+  border-bottom: #e5e1d7 solid 1px;
+}
+.subscribe > label > input {
+  all: unset;
+  flex: 1;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+.subscribe > button {
+  margin-top: 2rem;
+  font-size: 1.33rem;
+}
+.subscribe > button:hover {
+  color: rgba(229, 225, 215, 0.7);
+}
+.subscribe > button,
+.subscribe > label > input {
+  font-family: Proxima Nova, Arial, sans-serif;
+}
+@media (max-width: 684px) {
+  .subscribe > h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 580px) {
+  .subscribe > h1 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 389px) {
+  .subscribe {
+    font-size: 16px;
+  }
+}
+@media (max-width: 351px) {
+  .subscribe {
+    font-size: 14px;
+  }
+}

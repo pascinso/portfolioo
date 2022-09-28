@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&family=Roboto+Slab:wght@700&family=Source+Sans+Pro&display=swap"
+      rel="preload"
+      as="font"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link type="text/css" href="style.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="app.js" defer></script>
+  </head>
+
+  <body>
+    <header class="bar">
+      <a class="logo" href="/">x~x</a>
+    </header>
+
+    <section>
+      <nav class="projects">
+        <span class="line"></span>
+        <p>Choose a project</p>
+
+        <button
+          id="Thrive-NY"
+          class="project is-hovered"
+          onclick="onClick(event)"
+        >
+          Thrive NY
+          <div class="hovered">
+            <span class="slash"></span
+            ><a class="link" href="/thrive-ny.html">Explore</a>
+          </div>
+        </button>
+        <button id="Kickz" class="project" onclick="onClick(event)">
+          Kickz
+        </button>
+        <button id="Curology" class="project" onclick="onClick(event)">
+          Curology
+        </button>
+        <button id="Tweeters" class="project" onclick="onClick(event)">
+          Tweeters
+        </button>
+        <button id="Sunny-Gs" class="project" onclick="onClick(event)">
+          Sunny Gs
+        </button>
+      </nav>
+    </section>
+
+    <form class="subscribe" onsubmit="onSubmit(event)">
+      <h1>Subscribe to newsletter</h1>
+
+      <label for="input-name">
+        Name:
+        <input type="text" id="input-name" name="name" />
+      </label>
+      <label for="input-email">
+        Email:
+        <input type="text" id="input-email" name="email" />
+      </label>
+
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

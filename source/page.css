@@ -1,0 +1,97 @@
+@import url("/source/default.css");
+
+.content {
+  padding: 60px 18% 130px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #e5e1d7;
+}
+.content * {
+  display: flex;
+}
+
+.title {
+  flex-direction: column;
+  font-family: Roboto Slab, Arial, sans-serif;
+  font-size: 70px;
+  line-height: 1.2;
+}
+.title > h1 {
+  margin: 0;
+}
+@media (max-width: 578px) {
+  .title {
+    font-size: 50px;
+  }
+}
+@media (max-width: 478px) {
+  .title {
+    line-height: unset;
+    font-size: 30px;
+  }
+}
+@media (max-width: 378px) {
+  .title {
+    font-size: 26px;
+  }
+}
+
+.description,
+.artwork {
+  color: #7f7f7f;
+  font-family: Source Sans Pro, Arial, sans-serif;
+}
+.description > .date,
+.artwork {
+  font-size: 16px;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 2rem 0;
+  position: relative;
+  padding: 0 0.5rem 0;
+  text-align: justify;
+  flex-direction: column;
+}
+.description > .date {
+  padding-top: 0.6rem;
+  align-self: flex-end;
+}
+
+/* ! pseudo selectors can be used to append a simple item without HTML */
+
+/* *1 :before -> appends item before the children inside element with className="date" (while within the parent element with className="description") */
+/* *2 :after -> appends item after the children inside element... */
+.description > .date::before {
+  content: "—";
+  margin-right: 0.2rem;
+}
+
+.artworks {
+  /* ! prevent each artwork (or child element) from squashing into a single row as the device's width changes */
+  flex-wrap: wrap; 
+}
+
+.artwork {
+  flex-direction: column;
+  width: 30%;
+  margin: 0.5rem;
+
+  /* ! allows element to fill in the remaining available space, regarless of the width=30% as the device's width changes */
+  flex-grow: 1;
+}
+.artwork > img {
+  width: 100%;
+  height: 100%;
+}
+.artwork > p {
+  margin: 0.5rem 0;
+}
+@media (max-width: 478px) {
+  .artwork {
+    width: 100%;
+  }
+}
